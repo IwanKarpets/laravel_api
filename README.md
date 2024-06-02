@@ -45,25 +45,9 @@ Route::get('/orders', [OrderController::class, 'fetchAndStore']);
 ### GET api/orders
 
 Фильтрация данных  
-Используются параметры: `start_date`, `end_date`, `max_amount`, `min_amount`  
-Если вы хотите фильтровать займы по сумме, чтобы получить те, что больше или меньше указанной суммы, вам нужно будет изменить параметры строки запроса. Вот примеры того, как это можно сделать:
-
-Для получения займов на сумму больше указанной:
-
-GET /loans?min_amount=5000
-В этом случае параметр min_amount=5000 означает, что вы хотите получить займы на сумму больше 5000.
-
-Для получения займов на сумму меньше указанной:
-
-GET /loans?max_amount=5000
-Здесь параметр max_amount=5000 указывает, что вы хотите получить займы на сумму меньше 5000.
-
-При помощи `start_date`, `end_date` задается диапазон дат  
-Формат: `Y-M-D`  
+Используются параметры: `dateFrom`, `dateTo`, `page`, `limit`  
+Формат даты: `Y-M-D`  
 Примеры запросов:   
-http://slim-rest-api/api/loans?min_amount=10000&min_amount=16000&start_date=2024-05-07&end_date=2024-05-10  
-http://slim-rest-api/api/loans?start_date=2024-05-07&end_date=2024-05-10  
-http://slim-rest-api/api/loans?max_amount=16000&min_amount=10000&start_date=2024-05-07
-
+http://127.0.0.1:8000/api/incomes?dateFrom=2024-06-01&dateTo=2024-05-31&page=1&key=&limit=100
 
 
